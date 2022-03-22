@@ -1,8 +1,8 @@
-import React from 'react';
-import { UserContext } from '../components/user-context';
-import Card from '../components/card';
-import { datedTransaction } from '../components/dated-transaction';
-import validate from '../components/validate';
+import React                    from 'react';
+import { UserContext }          from '../components/user-context';
+import Card                     from '../components/card';
+import { datedTransaction }     from '../components/dated-transaction';
+import validate                 from '../components/validate';
 
 function Deposit() {
     // Set the Context
@@ -22,7 +22,6 @@ function Deposit() {
     });
     
     function handleSubmit() {
-        console.log(`Deposit is ${deposit}`);
         // Display an error if the deposit is negative
         if (deposit <= 0) {
             setMessage('Please enter a number greater than zero');
@@ -32,14 +31,12 @@ function Deposit() {
         let currentBalance = Number(ctx.users[i].balance);
         ctx.users[i].balance = currentBalance + Number(deposit);
         const currentTransaction = datedTransaction(deposit);
-        console.log(`Current Transaction is ${JSON.stringify(currentTransaction)}`);
         ctx.users[i].history.splice(0,0,currentTransaction);
-        console.log(`New balance is ${ctx.users[i].balance}`);
         ctx.currentUser = ctx.users[i];
         setMessage(`Successfully deposited $${deposit}`)
         setDeposit(0)
-
-    }
+        setEnable(false);
+    };
 
     // Validate all fields using the validate function inported from validate
     const validateThis = () => {
@@ -72,30 +69,12 @@ function Deposit() {
                     <input type="number" className="form-control" id="deposit" placeholder="Enter amount to deposit" value={deposit} onChange={e => {makeChange(e, setDeposit)}}/><br/>
                     <button type="submit" disabled={!enable} className="btn btn-light" onClick={handleSubmit}>Deposit</button><br/><br/>
                     {message && <h5>{message}</h5>}
-
-
-                
-                
                 </>
             ):(
                 <>
                     <h5>You must log in to proceed</h5>
-                
-                
-                
-                
-                
                 </>
             )}
-        
-        
-        
-        
-        
-        
-        
-        
-        
         />
     );
 }
