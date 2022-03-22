@@ -2,15 +2,14 @@ import React from 'react';
 import Card from '../components/card';
 import { UserContext } from '../components/user-context';
 
-
 function CreateAccount() {
-    const [show, setShow]            = React.useState(true);
-    const [status, setStatus]        = React.useState('');
-    const [name, setName]            = React.useState('');
-    const [email, setEmail]          = React.useState('');
-    const [password, setPassword]    = React.useState('');
+    const [show, setShow]                   = React.useState(true);
+    const [status, setStatus]               = React.useState('');
+    const [errorMessage, setErrorMessage]   = React.useState(null);
+    const [name, setName]                   = React.useState('');
+    const [email, setEmail]                 = React.useState('');
+    const [password, setPassword]           = React.useState('');
     const ctx = React.useContext(UserContext);
-    console.log(ctx);
  
     function validate(field, label){
          if (!field) {

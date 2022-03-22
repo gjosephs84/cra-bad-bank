@@ -3,11 +3,12 @@ import { UserContext } from '../components/user-context';
 import Card from '../components/card';
 
 function Login() {
-    const ctx = React.useContext(UserContext);
+    const ctx                               = React.useContext(UserContext);
     const [status, setStatus]               = React.useState('');
     const [email, setEmail]                 = React.useState('');
     const [password, setPassword]           = React.useState('');
-    const [errorMessage, setErrorMessage]   = React.useState(null)
+    const [errorMessage, setErrorMessage]   = React.useState(null);
+    const [enable, setEnable]               = React.useState(false);
     const [show, setShow]                   = React.useState(() => {
         if (ctx.currentUser) {
             return false;
@@ -28,9 +29,8 @@ function Login() {
 
     function handleSubmit() {
         setErrorMessage(null);
-        console.log(email,password);
-        if (!validate(email,     'email'))       return;
-        if (!validate(password,  'password'))    return;
+        if (!validate(email, "please enter the email associated with your account"))      return;
+        if (!validate(password,  'please enter your account password'))    return;
         let foundUser;
         for (let i=0; i<ctx.users.length; i++) {
             if (ctx.users[i].email == email) {
@@ -40,6 +40,7 @@ function Login() {
                     ctx.userIndex = i;
                     console.log("Found the user!!!!");
                     console.log(JSON.stringify(foundUser));
+                    setEnable(false);
                     setShow(false);
                     return;
                 } else {
@@ -71,10 +72,20 @@ function Login() {
             body={show ? (
                 <>
                     Email<br/>
-                    <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
+                    <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => {
+                        setEmail(e.currentTarget.value)
+                        if (validate(email, 'please enter the email associated with your account') && validate(password, 'please enter your password')) {
+                            setEnable(true);
+                        }
+                        }}/><br/>
                     Password<br/>
-                    <input type="input" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-                    <button type="submit" className="btn btn-light" onClick={handleSubmit}>Log In</button>
+                    <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => {
+                        setPassword(e.currentTarget.value)
+                        if (validate(email, 'please enter the email associated with your account') && validate(password, 'please enter your password')) {
+                            setEnable(true);
+                        }
+                        }}/><br/>
+                    <button type="submit" disabled={!enable}className="btn btn-light" onClick={handleSubmit}>Log In</button>
                     {errorMessage && <h5>{errorMessage}</h5>}
                 </>
             ):(
