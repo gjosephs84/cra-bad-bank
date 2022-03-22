@@ -23,8 +23,6 @@ function Login() {
   
     function handleSubmit() {
         setErrorMessage(null);
-        if (!validate(email, "please enter the email associated with your account", setStatus))      return;
-        if (!validate(password,  'please enter your account password', setStatus))    return;
         let foundUser;
         for (let i=0; i<ctx.users.length; i++) {
             if (ctx.users[i].email == email) {
@@ -95,25 +93,6 @@ function Login() {
                     <button type="submit" className="btn btn-light" onClick={clearForm}>Log Out</button>
                 </>
             )}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
         />    
     );
 }
