@@ -56,6 +56,24 @@ function Login() {
         ctx.userIndex = null;
     }
 
+    // Validate all fields using the validate function inported from validate
+    const validateThis = () => {
+        if (validate(email, 'please enter the email associated with your account', setStatus) &&
+            validate(password, 'please enter your password', setStatus))
+            {
+                return true
+            } else {
+                return false
+            };
+    };
+
+    // A function to handle the onChange
+    const makeChange = (e, setThis) => {
+        setThis(e.currentTarget.value);
+        if (validateThis())
+            {setEnable(true)};
+    }; 
+
     return (
         <Card
             bgcolor="primary"
@@ -64,19 +82,9 @@ function Login() {
             body={show ? (
                 <>
                     Email<br/>
-                    <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => {
-                        setEmail(e.currentTarget.value);
-                        if (validate(email, 'please enter the email associated with your account', setStatus) && validate(password, 'please enter your password', setStatus)) {
-                            setEnable(true);
-                        }
-                        }}/><br/>
+                    <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => {makeChange(e, setEmail)}}/><br/>
                     Password<br/>
-                    <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => {
-                        setPassword(e.currentTarget.value)
-                        if (validate(email, 'please enter the email associated with your account', setStatus) && validate(password, 'please enter your password', setStatus)) {
-                            setEnable(true);
-                        }
-                        }}/><br/>
+                    <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => {makeChange(e, setPassword)}}/><br/>
                     <button type="submit" disabled={!enable}className="btn btn-light" onClick={handleSubmit}>Log In</button>
                     <br/><br/>
                     {errorMessage && <h5>{errorMessage}</h5>}
