@@ -1,6 +1,7 @@
 import React from 'react';
 import { UserContext } from '../components/user-context';
 import Card from '../components/card';
+import './styles/transaction-history.css';
 
 function History() {
     const ctx = React.useContext(UserContext);
@@ -30,7 +31,7 @@ function History() {
     
     return (
         <Card
-            bgcolor="primary"
+            bgcolor="main"
             header="Balance and History"
             status={status}
             body={show ? (
@@ -38,7 +39,7 @@ function History() {
                     <h5>Welcome {ctx.currentUser.name}</h5>
                     <h6>Your current balance is:</h6>
                     <h6>${ctx.currentUser.balance}</h6>
-                    Transaction History<br/>
+                    <h6>Transaction History</h6>
                     {ctx.currentUser.history.map((transaction, i) => 
                         <Transaction key={i} t={transaction}/>
                     )}

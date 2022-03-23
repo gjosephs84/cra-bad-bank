@@ -2,6 +2,7 @@ import React from 'react';
 import { UserContext } from '../components/user-context';
 import Card from '../components/card';
 import { Transaction } from '../components/dated-transaction';
+import './styles/alldata.css';
 
 function AllData() {
     const ctx = React.useContext(UserContext);
@@ -10,45 +11,47 @@ function AllData() {
     console.log(ctx.users);
     
     return (
+        
         <Card
-            bgcolor="primary"
+            bgcolor="main"
             header="All Data"
-            body={<div>
-                {ctx.users.map((user, index) => {
-                    return (
-                    <Card
-                        key={index}
-                        bgcolor="secondary"
-                        header={`${user.name} - ${user.email}`}
-                        body={<div>
-                            <h6>Password:</h6>
-                            <p>{user.password}</p>
-                            <h6>Balance:</h6>
-                            <p>{user.balance}</p>
-                            <h6>Transaction History:</h6>
-                            {user.history.map((transaction, i) => 
+            width="40rem"
+            body={
+                <>
+                <div className="alldata">
+                    <div className="offset"><h5>Name</h5></div>
+                    <div><h5>Email</h5></div>
+                    <div><h5>Password</h5></div>
+                    <div><h5>Transactions</h5></div>
+                </div>    
+                    {ctx.users.map((user, index) => {
+                        return (
+                            <div className="alldata data-item" key={index}>
+                                <div className="offset">{user.name}</div>
+                                <div>{user.email}</div>
+                                <div>{user.password}</div>
+                                <div>
+                                {user.history.map((transaction, i) => 
                                 <Transaction key={i} t={transaction}/>
-                            )}
+                                )}
+                                </div>
                             </div>
-                        }
+                        )
+                    }
 
-                    
-                    />
-                    );
-                }
-                )}
-                </div>
-           }
-        
-        
-        
-        
-        
+
+
+
+                    )}
+                
+                </>
+            }
         
         
         
         
         />
+        
     );
 }
 

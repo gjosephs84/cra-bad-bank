@@ -4,8 +4,13 @@ function Card(props){
         const txt = props.txtcolor ? ' text-' + props.txtcolor: ' text-white';
         return 'card mb-3 ' + bg + txt;
     }
+
+    function styles() {
+        const wdth = props.width ? props.width: "18rem";
+        return wdth;
+    }
     return (
-        <div className={classes()} style={{maxWidth: "18rem"}}>
+        <div className={classes()} style={{minWidth: styles()}}>
             <div className="card-header">{props.header}</div>
             <div className="card-body">
                 {props.title && (<h5 className="card-title">{props.title}</h5>)}

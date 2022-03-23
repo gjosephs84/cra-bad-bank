@@ -73,8 +73,9 @@ function Login() {
     }; 
 
     return (
+        <div className="centered">
         <Card
-            bgcolor="primary"
+            bgcolor="main"
             header="Login"
             status={status}
             body={show ? (
@@ -93,7 +94,8 @@ function Login() {
                     <button type="submit" className="btn btn-light" onClick={clearForm}>Log Out</button>
                 </>
             )}
-        />    
+        /> 
+        </div>   
     );
 }
 

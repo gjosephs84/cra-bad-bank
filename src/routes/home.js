@@ -1,13 +1,15 @@
 import Card from '../components/card';
+import image from '../images/bank.png'
 
 function Home() {
     return (
        <Card
-            txtcolor="black"
+            txtcolor="white"
+            bgcolor="main"
             header="Bad Bank Landing Page"
             title="Welcome to the Bank"
-            text="You can use this bank"
-            body={<img src="/images/bank.png" style={{width: 250}}></img>}
+            text="Use at your own risk!"
+            body={<img src={image} style={{width: 250}}></img>}
        />
     );
 }

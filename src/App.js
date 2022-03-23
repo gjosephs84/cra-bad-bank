@@ -9,9 +9,13 @@ function App() {
 
   return (
     <div>
+    
       {/* The outlet tag allows the router to render whatever I'm linking to */}
       <NavigationBar/>
+      <br/>
+      <div className="centered">
       <Outlet />
+      </div>
     </div>
   );
 }
