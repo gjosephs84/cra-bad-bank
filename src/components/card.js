@@ -10,8 +10,8 @@ function Card(props){
         return wdth;
     }
     return (
-        <div className={classes()} style={{minWidth: styles()}}>
-            <div className="card-header">{props.header}</div>
+        <div className={classes()} style={{minWidth: styles(), maxWidth: styles()}}>
+            <div className="card-header"><h4>{props.header}</h4></div>
             <div className="card-body">
                 {props.title && (<h5 className="card-title">{props.title}</h5>)}
                 {props.text && (<p className="card-text">{props.text}</p>)}

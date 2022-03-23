@@ -25,8 +25,8 @@ ReactDOM.render(
       <UserContext.Provider value={
                 {users:[
                     { name:'Gregory',
-                      email:'gjosephs@mit.edu',
-                      password:'secret',
+                      email:'greg@josephs.com',
+                      password:'notsecure',
                       balance:100,
                       history:[] }
                 ],

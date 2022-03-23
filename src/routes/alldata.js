@@ -15,7 +15,7 @@ function AllData() {
         <Card
             bgcolor="main"
             header="All Data"
-            width="40rem"
+            width="50rem"
             body={
                 <>
                 <div className="alldata">

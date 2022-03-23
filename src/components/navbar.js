@@ -1,11 +1,11 @@
-import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Container, Nav} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
 function NavigationBar() {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar className="color-nav" variant="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">Bad Bank</Navbar.Brand>
+                <Navbar.Brand href="/">Bad Bank</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

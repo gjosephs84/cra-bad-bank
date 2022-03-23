@@ -48,3 +48,28 @@
 .bg-main-light {
   background-color: #baddd2;
 }
+.color-nav {
+  background-color: #baddd2;
+}
+
+.nav-link:hover {
+  font-weight: bolder;
+}
+
+.active.nav-link.active {
+  font-weight: bolder;
+}
+
+.landing {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.pushed {
+  margin-left: 20px;
+}

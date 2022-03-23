@@ -6,10 +6,25 @@ function Home() {
        <Card
             txtcolor="white"
             bgcolor="main"
-            header="Bad Bank Landing Page"
-            title="Welcome to the Bank"
-            text="Use at your own risk!"
-            body={<img src={image} style={{width: 250}}></img>}
+            header="Welcome to Gregory's Bad Bank"
+            width="50rem"
+            body={
+            
+            <div className="landing">
+            <img src={image} style={{width: 250}}></img>
+            <div className="align-right">
+                <h4><em>"Where Transparency is our Only Policy"</em></h4>
+                <h5>Open an account today and receive:</h5>
+                <ul>
+                    <li className="pushed">$100 New Account Bonus!</li>
+                    <li className="pushed">No fees. Ever!</li>
+                    <li className="pushed"> Total exposure of your personal information!</li>
+                </ul>
+            </div>
+            </div>
+            
+            
+            }
        />
     );
 }
