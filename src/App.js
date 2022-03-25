@@ -5,13 +5,13 @@ import NavigationBar from './components/navbar';
 import { Outlet } from 'react-router-dom';
 
 function App() {
-  
+  const [loggedIn, setLoggedIn] = React.useState(false);
 
   return (
     <div>
     
       {/* The outlet tag allows the router to render whatever I'm linking to */}
-      <NavigationBar/>
+      <NavigationBar loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
       <br/>
       <div className="centered">
       <Outlet />

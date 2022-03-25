@@ -15,7 +15,7 @@ import Deposit from './routes/deposit';
 import Withdraw from './routes/withdraw';
 import History from './routes/transaction-history';
 import AllData from './routes/alldata';
-
+import {loggedIn, setLoggedIn} from './App';
 
 
 
@@ -31,14 +31,14 @@ ReactDOM.render(
                       history:[] }
                 ],
                 currentUser: null,
-                userIndex: null
+                userIndex: null,
                 }
             } >
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />}/>
           <Route path="createaccount" element={<CreateAccount />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<Login/>} />
           <Route path="deposit" element={<Deposit />} />
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="transaction-history" element={<History />} />

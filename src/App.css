@@ -71,5 +71,8 @@
 }
 
 .pushed {
-  margin-left: 20px;
+  margin-left: 15px;
+}
+.extra-pushed {
+  margin-left: 50px;
 }

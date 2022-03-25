@@ -14,11 +14,11 @@ function Home() {
             <img src={image} style={{width: 250}}></img>
             <div className="align-right">
                 <h4><em>"Where Transparency is our Only Policy"</em></h4>
-                <h5>Open an account today and receive:</h5>
+                <h5 className="pushed">Open an account today and receive:</h5>
                 <ul>
-                    <li className="pushed">$100 New Account Bonus!</li>
-                    <li className="pushed">No fees. Ever!</li>
-                    <li className="pushed"> Total exposure of your personal information!</li>
+                    <li className="extra-pushed">$100 New Account Bonus!</li>
+                    <li className="extra-pushed">No fees. Ever!</li>
+                    <li className="extra-pushed"> Total exposure of your personal information!</li>
                 </ul>
             </div>
             </div>

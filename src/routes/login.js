@@ -74,11 +74,12 @@ function Login() {
 
     return (
         <div className="centered">
-        <Card
+        {show ? (
+            <Card
             bgcolor="main"
             header="Login"
             status={status}
-            body={show ? (
+            body={
                 <>
                     Email<br/>
                     <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => {makeChange(e, setEmail)}}/><br/>
@@ -87,14 +88,22 @@ function Login() {
                     <button type="submit" disabled={!enable}className="btn btn-light" onClick={handleSubmit}>Log In</button>
                     <br/><br/>
                     {errorMessage && <h5>{errorMessage}</h5>}
-                </>
-            ):(
+                </>}
+        /> ):(
+            <Card
+            bgcolor="main"
+            header="Success!"
+            status={status}
+            body={
                 <>
-                    <h5>Success</h5>
+                    <h5>Welcome {ctx.currentUser.name}, you are now logged in.</h5>
+                    <br/>
                     <button type="submit" className="btn btn-light" onClick={clearForm}>Log Out</button>
-                </>
-            )}
-        /> 
+                </>}
+            
+        />
+        ) }
+        
         </div>   
     );
 }

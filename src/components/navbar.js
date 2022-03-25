@@ -1,6 +1,7 @@
 import {Navbar, Container, Nav} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
+
 function NavigationBar() {
     return (
         <Navbar className="color-nav" variant="light" expand="lg">
@@ -33,7 +34,7 @@ function NavigationBar() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar> 
     );
 }
 

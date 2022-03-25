@@ -24,3 +24,7 @@
 .data-item .transaction:nth-of-type(odd) {
     background-color: unset;
 }
+
+.padded {
+    padding: 2px;
+}
