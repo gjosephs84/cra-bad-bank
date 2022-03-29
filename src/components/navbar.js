@@ -11,25 +11,25 @@ function NavigationBar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <LinkContainer to="/">
-                            <Nav.Link>Home</Nav.Link>
+                            <Nav.Link title="Home Page">Home</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/createaccount">
-                            <Nav.Link>Create Account</Nav.Link>
+                            <Nav.Link title="Create a New Account">Create Account</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="login">
-                            <Nav.Link>Login</Nav.Link>
+                            <Nav.Link title="Log In or Out">Login</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="deposit">
-                            <Nav.Link>Deposit</Nav.Link>
+                            <Nav.Link title="Deposit Funds">Deposit</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="withdraw">
-                            <Nav.Link>Withdraw</Nav.Link>
+                            <Nav.Link title="Withdraw Funds">Withdraw</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="transaction-history">
-                            <Nav.Link>Transaction History</Nav.Link>
+                            <Nav.Link title="View your Transaction History">Transaction History</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="alldata">
-                            <Nav.Link>All Data</Nav.Link>
+                            <Nav.Link title="See all User Data">All Data</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
