@@ -6,18 +6,18 @@ Bad Bank is so-named because it has no security. This application allows anyone 
 
 ## Learning Objectives
 In addition to showcasing my ability to use React, this project challenged me to:
-    - Learn (and re-learn) routing for single page applications
-    - Transfer a project from React standalone to Create React App
-    - Separate components into individual files and consider where and when to import them
-    - Consider where and how to hold context
-    - Deploy a static website via AWS
+    • Learn (and re-learn) routing for single page applications
+    • Transfer a project from React standalone to Create React App
+    • Separate components into individual files and consider where and when to import them
+    • Consider where and how to hold context
+    • Deploy a static website via AWS
 
 ## Roadmap of Future Improvements
 Future planned improvements include:
-    - Adding the option to open different types of accounts (ie: checking, savings)
-    - Adding the ability to transfer funds between users
-    - Adding a logout option to the navigation bar that is conditional upon whether a user is logged in or not
-    - Integration with a database subject to learning in Part 3 of this course.
+    • Adding the option to open different types of accounts (ie: checking, savings)
+    • Adding the ability to transfer funds between users
+    • Adding a logout option to the navigation bar that is conditional upon whether a user is logged in or not
+    • Integration with a database subject to learning in Part 3 of this course.
 
 ## View the deployment
 This site is deployed via AWS at:
