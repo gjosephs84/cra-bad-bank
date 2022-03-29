@@ -6,11 +6,13 @@ Bad Bank is so-named because it has no security. This application allows anyone 
 
 ## Learning Objectives
 In addition to showcasing my ability to use React, this project challenged me to:
-    • Learn (and re-learn) routing for single page applications
-    • Transfer a project from React standalone to Create React App
-    • Separate components into individual files and consider where and when to import them
-    • Consider where and how to hold context
-    • Deploy a static website via AWS
+<ul>
+    <li>Learn (and re-learn) routing for single page applications</li>
+    <li>Transfer a project from React standalone to Create React App</li>
+    <li>Separate components into individual files and consider where and when to import them</li>
+    <li>Consider where and how to hold context</li>
+    <li>Deploy a static website via AWS</li>
+</ul>
 
 ## Roadmap of Future Improvements
 Future planned improvements include:
