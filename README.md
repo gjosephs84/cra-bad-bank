@@ -1,3 +1,31 @@
+# Gregory's Bad Bank
+## Description
+My version of the Bad Bank application - submitted as the portfolio project for Part 2 - Front-End Development with React, from MIT XPro's Professional Certificate in Coding: Full-Stack Development with MERN course.
+
+Bad Bank is so-named because it has no security. This application allows anyone to create an account, deposit and withdraw "money," and view all the information of each and every user
+
+## Learning Objectives
+In addition to showcasing my ability to use React, this project challenged me to:
+    - Learn (and re-learn) routing for single page applications
+    - Transfer a project from React standalone to Create React App
+    - Separate components into individual files and consider where and when to import them
+    - Consider where and how to hold context
+    - Deploy a static website via AWS
+
+## Roadmap of Future Improvements
+Future planned improvements include:
+    - Adding the option to open different types of accounts (ie: checking, savings)
+    - Adding the ability to transfer funds between users
+    - Adding a logout option to the navigation bar that is conditional upon whether a user is logged in or not
+    - Integration with a database subject to learning in Part 3 of this course.
+
+## View the deployment
+This site is deployed via AWS at:
+<a href="http://gregory-josephsbankingapplication.s3-website-us-east-1.amazonaws.com/">http://gregory-josephsbankingapplication.s3-website-us-east-1.amazonaws.com/</a>
+
+## How to Run
+Download/clone the repository to your local machine, and follow the boiler-plate Create React App instructions included below:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +96,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License Information
+This software is licensed MIT. For complete details, please see LICENSE
