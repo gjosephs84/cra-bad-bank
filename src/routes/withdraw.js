@@ -46,7 +46,7 @@ function Withdraw() {
 
     // Validate all fields using the validate function inported from validate
     const validateThis = () => {
-        if (validate(withdraw, 'please an amount to withdraw', setStatus))
+        if (validate(withdraw, 'please enter an amount to withdraw', setStatus))
             {
                 return true
             } else {

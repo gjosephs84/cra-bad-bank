@@ -40,7 +40,7 @@ function Deposit() {
 
     // Validate all fields using the validate function inported from validate
     const validateThis = () => {
-        if (validate(deposit, 'please an amount to deposit', setStatus))
+        if (validate(deposit, 'please enter an amount to deposit', setStatus))
             {
                 return true
             } else {
