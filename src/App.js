@@ -5,6 +5,10 @@ import NavigationBar from './components/navbar';
 import { Outlet } from 'react-router-dom';
 
 function App() {
+  // I want to use this within the navbar to conditionally render log in
+  // or log out. The conditional rendering works, except updating the state
+  // of loggedIn doesn't cause the navbar to rerender.
+  
   const [loggedIn, setLoggedIn] = React.useState(false);
 
   return (
