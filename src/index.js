@@ -16,9 +16,6 @@ import Withdraw from './routes/withdraw';
 import History from './routes/transaction-history';
 import AllData from './routes/alldata';
 
-// Maybe try to use this for getting the navbar to rerender on login/out?
-import {loggedIn, setLoggedIn} from './App';
-
 
 
 ReactDOM.render(
