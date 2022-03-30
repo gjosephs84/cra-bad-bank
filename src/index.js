@@ -15,6 +15,8 @@ import Deposit from './routes/deposit';
 import Withdraw from './routes/withdraw';
 import History from './routes/transaction-history';
 import AllData from './routes/alldata';
+
+// Maybe try to use this for getting the navbar to rerender on login/out?
 import {loggedIn, setLoggedIn} from './App';
 
 
@@ -22,6 +24,11 @@ import {loggedIn, setLoggedIn} from './App';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+
+{/* Wrap everything below in UserContext.Provider to make context available
+to all the associated routes. Then define how the context object is going to 
+look initially */}
+
       <UserContext.Provider value={
                 {users:[
                     { name:'Gregory',
@@ -35,6 +42,10 @@ ReactDOM.render(
                 }
             } >
       <Routes>
+
+{/* Can pass props to each of the components below within the curly braces
+for element within each route */}
+
         <Route path="/" element={<App />}>
           <Route index element={<Home />}/>
           <Route path="createaccount" element={<CreateAccount />} />
@@ -50,8 +61,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.querySelector('#root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
