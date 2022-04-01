@@ -6,15 +6,17 @@ import { Outlet } from 'react-router-dom';
 import { UserContext } from './components/user-context'
 
 function App() {
-  // I want to use this within the navbar to conditionally render log in
-  // or log out. The conditional rendering works, except updating the state
-  // of loggedIn doesn't cause the navbar to rerender.
-
+  // Defining state variables to conditionally render login or logout
+  // in the navbar
   const [loggedIn, setLoggedIn] = React.useState(false);
+
+  // Grabbing the context to insert the state variables for use in the navbar
   const ctx = React.useContext(UserContext);
-  console.log(setLoggedIn);
+  
+  // Adding the state variables to context. Wahoo! Now they can be used
+  // to conditionally render options in the navbar!
   ctx.loginState = [loggedIn, setLoggedIn];
-  console.log(`loginState is ${ctx.loginState[1]}`);
+  
 
   return (
     <div>
