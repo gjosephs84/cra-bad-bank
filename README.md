@@ -14,14 +14,17 @@ In addition to showcasing my ability to use React, this project challenged me to
     <li>Deploy a static website via AWS</li>
 </ul>
 
+## Recent Improvements
+I successfully integrated a feature to conditionally show login/logout in the navigation bar based on login status.
+
 ## Roadmap of Future Improvements
 Future planned improvements include:
 <ul>
     <li>Adding the option to open different types of accounts (ie: checking, savings)</li>
     <li>Adding the ability to transfer funds between users</li>
-    <li>Adding a logout option to the navigation bar that is conditional upon whether a user is logged in or not</li>
     <li>Integration with a database subject to learning in Part 3 of this course.</li>
 </ul>
+
 ## View the deployment
 This site is deployed via AWS at:
 <a href="http://gregory-josephsbankingapplication.s3-website-us-east-1.amazonaws.com/">http://gregory-josephsbankingapplication.s3-website-us-east-1.amazonaws.com/</a>
