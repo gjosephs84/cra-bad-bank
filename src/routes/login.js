@@ -13,6 +13,7 @@ function Login() {
     const [password, setPassword]           = React.useState('');
     const [errorMessage, setErrorMessage]   = React.useState(null);
     const [enable, setEnable]               = React.useState(false);
+    const [loggedIn, setLoggedIn]           = ctx.loginState;
     const [show, setShow]                   = React.useState(() => {
         if (ctx.currentUser) {
             return false;
@@ -32,6 +33,7 @@ function Login() {
                     ctx.userIndex = i;
                     setEnable(false);
                     setShow(false);
+                    setLoggedIn(true);
                     return;
                 } else {
                     setErrorMessage("Password Incorrect");
@@ -52,6 +54,7 @@ function Login() {
         setShow(true);
         ctx.currentUser = null;
         ctx.userIndex = null;
+        setLoggedIn(false);
     }
 
     // Validate all fields using the validate function inported from validate

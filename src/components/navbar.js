@@ -1,12 +1,11 @@
 import React from 'react';
 import {Navbar, Container, Nav} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
+import { UserContext } from './user-context';
 
-
-function NavigationBar(loggedIn, setLoggedIn) {
-    // Why is loggedIn an object [loggedIn, setLoggedIn];
-    console.log(`loggedIn is ${loggedIn.loggedIn}`);
-    console.log(`setLoggedIn is ${JSON.stringify(setLoggedIn)}`);
+function NavigationBar() {
+    const ctx = React.useContext(UserContext);
+    const [loggedIn, setLoggedIn] = ctx.loginState;
     return (
         <Navbar className="color-nav" variant="light" expand="lg">
             <Container>
@@ -20,8 +19,8 @@ function NavigationBar(loggedIn, setLoggedIn) {
                         <LinkContainer to="/createaccount">
                             <Nav.Link title="Create a New Account">Create Account</Nav.Link>
                         </LinkContainer>
-                        {loggedIn.loggedIn && <LinkContainer to="login">
-                            <Nav.Link title="Log In or Out">Login</Nav.Link>
+                        {!loggedIn && <LinkContainer to="login">
+                            <Nav.Link title="Log In">Login</Nav.Link>
                         </LinkContainer>}
                         <LinkContainer to="deposit">
                             <Nav.Link title="Deposit Funds">Deposit</Nav.Link>
@@ -35,6 +34,9 @@ function NavigationBar(loggedIn, setLoggedIn) {
                         <LinkContainer to="alldata">
                             <Nav.Link title="See all User Data">All Data</Nav.Link>
                         </LinkContainer>
+                        {loggedIn && <LinkContainer to="login">
+                            <Nav.Link title="Log Out">Logout</Nav.Link>
+                        </LinkContainer>}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

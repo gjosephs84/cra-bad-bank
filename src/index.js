@@ -36,6 +36,7 @@ look initially */}
                 ],
                 currentUser: null,
                 userIndex: null,
+                loginState: null
                 }
             } >
       <Routes>
