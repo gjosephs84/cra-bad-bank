@@ -36,6 +36,11 @@ look initially */}
                 ],
                 currentUser: null,
                 userIndex: null,
+
+                // Setting loginState as null here, because state variables
+                // will be added in App.js to allow for conditional rendering
+                // of login or logout options in the navbar
+
                 loginState: null
                 }
             } >
