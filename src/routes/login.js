@@ -13,6 +13,7 @@ function Login() {
     const [password, setPassword]           = React.useState('');
     const [errorMessage, setErrorMessage]   = React.useState(null);
     const [enable, setEnable]               = React.useState(false);
+    // Grab the state variables from context
     const [loggedIn, setLoggedIn]           = ctx.loginState;
     const [show, setShow]                   = React.useState(() => {
         if (ctx.currentUser) {
@@ -33,6 +34,7 @@ function Login() {
                     ctx.userIndex = i;
                     setEnable(false);
                     setShow(false);
+                    // Update loggedIn to hide 'Login' from navbar
                     setLoggedIn(true);
                     return;
                 } else {
@@ -54,6 +56,7 @@ function Login() {
         setShow(true);
         ctx.currentUser = null;
         ctx.userIndex = null;
+        // Update loggedIn to hide 'Logout' from navbar
         setLoggedIn(false);
     }
 
